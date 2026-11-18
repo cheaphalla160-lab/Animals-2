@@ -1,0 +1,6 @@
+{
+  "name": "Animal Word Park",
+  "description": "Primary school English animal vocabulary classroom game for bear, dolphin, lion, parrot, penguin, and whale with plate sorting, read-aloud practice, 2-player PK battle, cheerful background music, and leaderboard.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
