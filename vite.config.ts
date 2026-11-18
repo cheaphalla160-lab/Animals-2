@@ -28,6 +28,23 @@ export default defineConfig(() => {
           }
         },
       },
+      // Automatically prefix "/src/assets/..." with "/Animals-2" for GitHub Pages
+      {
+        name: 'fix-src-assets-base',
+        apply: 'build',
+        transform(code: string, id: string) {
+          if (id.includes('node_modules') || !code.includes('/src/assets/')) {
+            return null;
+          }
+          return {
+            code: code.replace(/(['"`])\/src\/assets\//g, '$1/Animals-2/src/assets/'),
+            map: null,
+          };
+        },
+        transformIndexHtml(html: string) {
+          return html.replace(/(['"])\/src\/assets\//g, '$1/Animals-2/src/assets/');
+        },
+      },
     ],
     resolve: {
       alias: {
